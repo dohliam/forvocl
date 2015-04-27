@@ -1,17 +1,28 @@
 Forvocl is a command-line tool for accessing the API provided by [Forvo](http://forvo.com/). Using forvocl you can list, play back, get information on, and save audio pronunciations contributed by users of the site.
 
 * [1 Requirements](#requirements)
-* [2 Usage](#usage)
-  * [2.1 Searching and playback](#searching-and-playback)
-  * [2.2 Options](#options)
-  * [2.3 Audio format](#audio-format)
-  * [2.4 Saving audio files to disk](#saving-audio-files-to-disk)
-* [3 Credits](#credits)
-* [4 License](#license)
+* [2 Installation](#installation)
+  * [2.1 Installation from distro packages](#installation-from-distro-packages)
+    * [2.1.1 User packaged](#user-packaged)
+* [3 Usage](#usage)
+  * [3.1 Searching and playback](#searching-and-playback)
+  * [3.2 Options](#options)
+  * [3.3 Audio format](#audio-format)
+  * [3.4 Saving audio files to disk](#saving-audio-files-to-disk)
+* [4 Issues](#issues)
+* [5 Credits](#credits)
+* [6 License](#license)
 
 # Requirements
 * mplayer
 * a Forvo API key
+
+# Installation
+To install you can either download the project source and run the script directly, or use a package manager to install the appropriate files for your distro.
+
+## Installation from distro packages
+### User packaged
+* ![logo](http://www.monitorix.org/imgs/archlinux.png "arch logo")Arch Linux: in the [AUR](https://aur.archlinux.org/packages/forvocl) and [Firef0x's Arch Linux Repository](http://firef0x.github.io/archrepo.html).
 
 # Usage
 Using the `forvocl.rb` script you can look up and play back audio pronunciations from [Forvo](http://forvo.com/). This requires registering for a [Forvo API key](http://api.forvo.com/), which is free for non-commercial educational use.
