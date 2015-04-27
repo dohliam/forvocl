@@ -8,7 +8,7 @@ require 'optparse'
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: example.rb [options]"
+  opts.banner = "Usage: forvocl.rb [options]"
 
   opts.on("-m", "--mp3", "Use mp3 files instead of ogg (default)") { options[:mp3] = true }
   opts.on("-l", "--list", "List all pronunciations") { options[:list] = true }
@@ -18,7 +18,7 @@ OptionParser.new do |opts|
 
 end.parse!
 
-config_dir = Dir.home + "/.config/gdcl/"
+config_dir = Dir.home + "/.config/forvocl/"
 
 # read key from config file, otherwise quit
 if File.exist?(config_dir + "config.yml")
