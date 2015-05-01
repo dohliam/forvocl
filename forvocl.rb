@@ -19,10 +19,21 @@ OptionParser.new do |opts|
 end.parse!
 
 config_dir = Dir.home + "/.config/forvocl/"
+config_gdcl = Dir.home + "/.config/gdcl/"
+xdg = "/etc/xdg/forvocl/"
+script_dir = File.expand_path(File.dirname(__FILE__)) + "/"
 
 # read key from config file, otherwise quit
 if File.exist?(config_dir + "config.yml")
   config = YAML::load(File.read(config_dir + "config.yml"))
+elsif File.exist?(config_gdcl + "config.yml")
+  config = YAML::load(File.read(config_gdcl + "config.yml"))
+elsif File.exist?(xdg + "config.yml")
+  config = YAML::load(File.read(xdg + "config.yml"))
+elsif File.exist?(script_dir + "config.yml")
+  config = YAML::load(File.read(script_dir + "config.yml"))
+  FileUtils.mkdir_p config_dir
+  FileUtils.cp script_dir + "config.yml", config_dir
 else
   abort("        No configuration file found in user home.")
 end

@@ -29,6 +29,16 @@ Using the `forvocl.rb` script you can look up and play back audio pronunciations
 
 Once you have a key, you just need to copy it into your forvocl config file in your user home directory (i.e. `~/.config/forvocl/config.yml`) under the section "forvo key". Uncomment the line `# :forvo_key: ""` and add your key between the quotation marks `""`. Now you can look up pronunciations by running `forvocl.rb`.
 
+## Location of configuration file
+
+Forvocl will attempt to read a configuration file located at `~/.config/forvocl/config.yml`. If it does not find it there (or if the directory doesn't exist, it will try looking in a few other places before giving up:
+
+1. If you use the [gdcl dictionary lookup tool](https://github.com/dohliam/gdcl) and have a `config.yml` file with a forvo key in `~/.config/gdcl`, there is no need to create a duplicate configuration file in the forvocl directory -- forvocl will read your key from the gdcl configuration.
+2. If you prefer (or if installed by your package manager) you can use the xdg config folder instead, located at `/etc/xdg/forvocl`
+3. As a last resort, forvocl will check for `config.yml` in the same folder as the `forvocl.rb` executable. This could be useful if you have downloaded the source and just want to try it out with minimal set up.
+
+If the configuration file cannot be found in any of these locations, forvocl will exit with a message explaining the situation.
+
 ## Searching and playback
 Forvocl has both interactive and non-interactive lookup modes. If run without any command-line arguments, it will prompt for a [language code](http://www.forvo.com/languages-codes/) and a word to pronounce. You can find a full list of the supported codes [here](http://www.forvo.com/languages-codes/).
 
