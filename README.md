@@ -5,10 +5,11 @@ Forvocl is a command-line tool for accessing the API provided by [Forvo](http://
   * [2.1 Installation from distro packages](#installation-from-distro-packages)
     * [2.1.1 User packaged](#user-packaged)
 * [3 Usage](#usage)
-  * [3.1 Searching and playback](#searching-and-playback)
-  * [3.2 Options](#options)
-  * [3.3 Audio format](#audio-format)
-  * [3.4 Saving audio files to disk](#saving-audio-files-to-disk)
+  * [3.1 Location of configuration file](#location-of-configuration-file)
+  * [3.2 Searching and playback](#searching-and-playback)
+  * [3.3 Options](#options)
+  * [3.4 Audio format](#audio-format)
+  * [3.5 Saving audio files to disk](#saving-audio-files-to-disk)
 * [4 Issues](#issues)
 * [5 Credits](#credits)
 * [6 License](#license)
@@ -31,7 +32,7 @@ Once you have a key, you just need to copy it into your forvocl config file in y
 
 ## Location of configuration file
 
-Forvocl will attempt to read a configuration file located at `~/.config/forvocl/config.yml`. If it does not find it there (or if the directory doesn't exist, it will try looking in a few other places before giving up:
+Forvocl will attempt to read a configuration file located at `~/.config/forvocl/config.yml`. If it does not find it there (or if the directory doesn't exist), it will try looking in a few other places before giving up:
 
 1. If you use the [gdcl dictionary lookup tool](https://github.com/dohliam/gdcl) and have a `config.yml` file with a forvo key in `~/.config/gdcl`, there is no need to create a duplicate configuration file in the forvocl directory -- forvocl will read your key from the gdcl configuration.
 2. If you prefer (or if installed by your package manager) you can use the xdg config folder instead, located at `/etc/xdg/forvocl`
